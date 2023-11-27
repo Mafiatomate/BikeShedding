@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include "manage.h"
 
 struct BikeStruct{
 
@@ -25,6 +26,10 @@ int main() {
     BikeStruct BikeDB[DBSize];
     int current = 0;
 
+    for(int i = 0; i <= DBSize; i++){
+        DBUsed[i] = 0;
+    }
+
     std::cout << "\nBitte wählen Sie eine der folgenen Optionen\n";
     std::cout << "[1] Liste von Artikeln anzeigen\n"
                  "[2] Einen Artikel der Liste hinzufügen\n"
@@ -32,25 +37,46 @@ int main() {
 
     std::cin >> option;
 
+
+    //temp
+    BikeDB[0].ArtNr = 41;
+    BikeDB[1].ArtNr = 236;
+    BikeDB[2].ArtNr = 1234;
+    DBUsed[1] = 1;
+    DBUsed[2] = 1;
+    DBUsed[3] = 1;
+
     switch (option){
         case 1: //Liste anzeigen
             std::cout << "Hier sind alle Einträge in der Liste\n";
 
 
             for (int i = 0; i<= DBSize; i++){
-                std::cout <<"[" << current << "] " << "Artikelnummer: " << BikeDB[current].ArtNr;
+                if (DBUsed[i] == 1) {
+                    std::cout << "[" << i << "] " << "Artikelnummer: " << BikeDB[i].ArtNr << "\n";
+                }
             }
+
             break;
         case 2:
         //Artikel hinzufügen
             for(int i = 0; i<= DBSize; i++){
                 if (DBUsed[i] == 0){
+                    std::cout << "Artikelnummer eingeben: \n";
                     std::cin >> BikeDB[current].ArtNr;
+                    std::cout << "Produktname eingeben:\n";
                     std::cin >> BikeDB[current].Prodname;
+                    std::cout << "Menge eingeben:\n";
                     std::cin >> BikeDB[current].qty;
-                    std::cin >> BikeDB[current].Date.tm_mday;
-                    std::cin >> BikeDB[current].Date.tm_mon;
+                    std::cout << "Jahr:\n";
                     std::cin >> BikeDB[current].Date.tm_year;
+                    std::cout << "Monat:\n";
+                    std::cin >> BikeDB[current].Date.tm_mon;
+                    std::cout << "Tag:\n";
+                    std::cin >> BikeDB[current].Date.tm_mday;
+
+                    //TODO listData() fertigstellen und einfügen
+                    std::cout << "Eintrag hinzugefügt\n";
                 }
                 break;
             }
