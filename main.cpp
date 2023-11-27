@@ -23,7 +23,7 @@ int main() {
     int DBUsed[DBSize]; //0 -> free, 1 -> used
     int option;
     BikeStruct BikeDB[DBSize];
-    int i = 0;
+    int current = 0;
 
     std::cout << "\nBitte wählen Sie eine der folgenen Optionen\n";
     std::cout << "[1] Liste von Artikeln anzeigen\n"
@@ -33,17 +33,28 @@ int main() {
     std::cin >> option;
 
     switch (option){
-        case 1:
-        //Liste anzeigen
+        case 1: //Liste anzeigen
+            std::cout << "Hier sind alle Einträge in der Liste\n";
+
+
+            for (int i = 0; i<= DBSize; i++){
+                std::cout <<"[" << current << "] " << "Artikelnummer: " << BikeDB[current].ArtNr;
+            }
             break;
         case 2:
         //Artikel hinzufügen
-        std::cin >> BikeDB[i].ArtNr;
-        std::cin >> BikeDB[i].Prodname;
-        std::cin >> BikeDB[i].qty;
-        std::cin >> BikeDB[i].Date.tm_mday;
-        std::cin >> BikeDB[i].Date.tm_mon;
-        std::cin >> BikeDB[i].Date.tm_year;
+            for(int i = 0; i<= DBSize; i++){
+                if (DBUsed[i] == 0){
+                    std::cin >> BikeDB[current].ArtNr;
+                    std::cin >> BikeDB[current].Prodname;
+                    std::cin >> BikeDB[current].qty;
+                    std::cin >> BikeDB[current].Date.tm_mday;
+                    std::cin >> BikeDB[current].Date.tm_mon;
+                    std::cin >> BikeDB[current].Date.tm_year;
+                }
+                break;
+            }
+
 
             break;
         case 3:
