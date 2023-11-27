@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(BikeShedding main.cpp
         manage.cpp
-        manage.h)
+        manage.h
+        Database.cpp
+        Database.h)

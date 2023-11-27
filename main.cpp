@@ -2,29 +2,14 @@
 #include <string>
 #include <ctime>
 #include "manage.h"
-
-struct BikeStruct{
-
-    int ArtNr;
-    std::string Prodname;
-    int qty;
-
-    struct tm{
-        int tm_mday;//0 to 24
-        int tm_mon; //0 to 11
-        int tm_year;
-    };
-    tm Date;
-};
-
+#include "Database.h"
 
 
 int main() {
-    int DBSize = 10;
-    int DBUsed[DBSize]; //0 -> free, 1 -> used
     int option;
+    int DBUsed[DBSize]; //0 -> free, 1 -> used
     BikeStruct BikeDB[DBSize];
-    int current = 0;
+
 
     for(int i = 0; i <= DBSize; i++){
         DBUsed[i] = 0;
@@ -38,7 +23,7 @@ int main() {
     std::cin >> option;
 
 
-    //temp
+    //temp data
     BikeDB[0].ArtNr = 41;
     BikeDB[1].ArtNr = 236;
     BikeDB[2].ArtNr = 1234;
@@ -53,7 +38,7 @@ int main() {
 
             for (int i = 0; i<= DBSize; i++){
                 if (DBUsed[i] == 1) {
-                    std::cout << "[" << i << "] " << "Artikelnummer: " << BikeDB[i].ArtNr << "\n";
+                    listData();
                 }
             }
 

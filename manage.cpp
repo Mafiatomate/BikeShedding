@@ -3,9 +3,20 @@
 //
 
 #include "manage.h"
+#include "Database.h"
 #include <iostream>
 #include <string>
 
-std::string listData(){
+
+void listData(int i){
+
+    std::cout << "Artikelnummer :" << BikeDB[i].ArtNr << "\n";
+    std::cout << "Produktname :" << BikeDB[i].Prodname << "\n";
+    std::cout << "Menge :" << BikeDB[i].ArtNr << "\n";
+    std::cout << "Datum: " << BikeDB[i].ArtNr << "\n";
+
+
+
+
     return "HIER ALLE DATEN";
 };
