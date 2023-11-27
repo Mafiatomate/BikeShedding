@@ -1,0 +1,3 @@
+C:/Users/heint/Documents/CLion Cpp/BikeShedding/cmake-build-debug/CMakeFiles/BikeShedding.dir
+C:/Users/heint/Documents/CLion Cpp/BikeShedding/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/heint/Documents/CLion Cpp/BikeShedding/cmake-build-debug/CMakeFiles/rebuild_cache.dir
