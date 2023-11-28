@@ -9,4 +9,5 @@
 #include <string>
 
 
-std::string listData();
+void listData(int, struct BikeStruct);
+void addData(struct BikeStruct[]);

@@ -7,8 +7,20 @@
 
 #endif //BIKESHEDDING_DATABASE_H
 
-int DBSize = 10;
-int current = 0;
-struct BikeStruct;
-BikeStruct BikeDB[DBSize];
+#include <iostream>
+#include <string>
 
+const int DBSize = 10;
+struct BikeStruct{
+
+    int ArtNr;
+    std::string Prodname;
+    int qty;
+
+    struct tm{
+        int tm_mday;//0 to 24
+        int tm_mon; //0 to 11
+        int tm_year;
+    };
+    tm Date;
+};

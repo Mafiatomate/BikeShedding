@@ -8,15 +8,35 @@
 #include <string>
 
 
-void listData(int i){
+void listData(int i, BikeStruct DB){
 
-    std::cout << "Artikelnummer :" << BikeDB[i].ArtNr << "\n";
-    std::cout << "Produktname :" << BikeDB[i].Prodname << "\n";
-    std::cout << "Menge :" << BikeDB[i].ArtNr << "\n";
-    std::cout << "Datum: " << BikeDB[i].ArtNr << "\n";
+    std::cout << "\nIndex: " << i << "\n";
+    std::cout << "Artikelnummer: " << DB.ArtNr << "\n";
+    std::cout << "Produktname: " << DB.Prodname << "\n";
+    std::cout << "Menge: " << DB.ArtNr << "\n";
+    std::cout << "Datum: " << DB.ArtNr << "\n";
+
+};
 
 
+void addData(BikeStruct DB[]){
 
-
-    return "HIER ALLE DATEN";
+    for(int i = 0; i<= DBSize; i++){
+        if (DB[i].ArtNr == -1){
+        //TODO validate user input
+            std::cout << "Artikelnummer eingeben: \n";
+            std::cin >> DB[i].ArtNr;
+            std::cout << "Produktname eingeben:\n";
+            std::cin >> DB[i].Prodname;
+            std::cout << "Menge eingeben:\n";
+            std::cin >> DB[i].qty;
+            std::cout << "Jahr:\n";
+            std::cin >> DB[i].Date.tm_year;
+            std::cout << "Monat:\n";
+            std::cin >> DB[i].Date.tm_mon;
+            std::cout << "Tag:\n";
+            std::cin >> DB[i].Date.tm_mday;
+            std::cout << "Eintrag hinzugefügt\n";
+        }
+    }
 };
