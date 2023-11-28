@@ -8,7 +8,7 @@ int main() {
     int option;
 
     //null data at startup
-    for(int i = 0; i <= DBSize; i++) {
+    for(int i = 0; i < DBSize; i++) {
         BikeDB[i].ArtNr = -1;
         BikeDB[i].Prodname = "";
         BikeDB[i].qty = 0;
@@ -23,7 +23,7 @@ int main() {
     BikeDB[2].ArtNr = 1234;
 
 
-    //while(1){
+    while(1){
         //choose option
         std::cout << "\nBitte wählen Sie eine der folgenen Optionen\n"
                      "[1] Alle Einträge anzeigen\n"
@@ -38,7 +38,7 @@ int main() {
         switch (option) {
             case 1: //list
                 std::cout << "Hier sind alle Einträge in der Liste\n";
-                for (int i = 0; i <= DBSize; i++) {
+                for (int i = 0; i < DBSize; i++) {
                     if (BikeDB[i].ArtNr > -1) {
                         listData(i, BikeDB[i]);
                     }
@@ -46,11 +46,11 @@ int main() {
                 break;
 
             case 2: //TODO add
-                //addData(BikeDB);
-
+                addData(BikeDB);
                 break;
-            case 3: //TODO change
 
+            case 3: //TODO change
+                //changeData(BikeDB);
                 break;
 
             case 4: //TODO remove
@@ -61,9 +61,12 @@ int main() {
 
                 break;
             default:
+                //TODO find out while it loops after invalid input
+                //std::cin.clear();
                 std::cout << "Bitte geben Sie eine gültige Option ein.";
+                break;
         }
-    //}
+    }
 
     return 0;
 }

@@ -16,8 +16,7 @@ void listData(int i, BikeStruct DB){
     std::cout << "Menge: " << DB.ArtNr << "\n";
     std::cout << "Datum: " << DB.ArtNr << "\n";
 
-};
-
+}
 
 void addData(BikeStruct DB[]){
 
@@ -37,6 +36,17 @@ void addData(BikeStruct DB[]){
             std::cout << "Tag:\n";
             std::cin >> DB[i].Date.tm_mday;
             std::cout << "Eintrag hinzugefügt\n";
+
+            //listData(i, DB[i]);
+            break;
         }
     }
-};
+}
+
+void changeData(){
+    int index;
+
+    std::cout << "Geben die den Index des zu verändernen Eintrags an:\n";
+    std::cin >> index;
+
+}
