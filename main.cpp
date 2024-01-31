@@ -45,7 +45,7 @@ int main() {
                 }
                 break;
 
-            case 2: //TODO add
+            case 2:
                 addData(BikeDB);
                 break;
 

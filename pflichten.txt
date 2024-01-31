@@ -1,0 +1,15 @@
+database ist ein Struct array bestehend aus
+Artikelnummer
+Produnktname
+Menge
+Struct Datum
+
+
+Aufgaben sind:
+
+- Warnung, wenn Bestände gering werden
+- Speichern und Löschen der Artikelnummer
+- Speichern und Löschen des Artikelnamens
+- Angabe von Einzel- und Gesamtpreis
+- Lagerbestand eines Artikels Ausgeben
+- Suchfunktion über Nummer und Name
